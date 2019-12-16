@@ -11,6 +11,8 @@ chrome.contextMenus.create(
     { "title": "自动填充选择题", "parentId": parents, "onclick": genericOnClick, id: 'fillChoice', "contexts": ["all"] });
 chrome.contextMenus.create(
     { "title": "自动填充判断题", "parentId": parents, "onclick": genericOnClick, id: 'fillJudge', "contexts": ["all"] });
+chrome.contextMenus.create(
+    { "title": "自动观看视频", "parentId": parents, "onclick": genericOnClick, id: 'autoVideo', "contexts": ["all"] });
 
 function genericOnClick(info, tab) {
     // 获取活动中的tab
