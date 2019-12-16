@@ -1,6 +1,6 @@
 'use strict';
 
-var parents = chrome.contextMenus.create({ "title": "fuckYXY", "contexts": ["all"] });
+var parents = chrome.contextMenus.create({ "title": "Fyxy", "contexts": ["all"] });
 chrome.contextMenus.create(
     { "title": "显示答案", "parentId": parents, "onclick": genericOnClick, id: 'showAnswer', "contexts": ["all"] });
 chrome.contextMenus.create(

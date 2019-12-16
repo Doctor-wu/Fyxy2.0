@@ -1,7 +1,7 @@
 {
-  "name": "fuckyouxueyuan",
-  "version": "1.0.4",
-  "description": "自动填充优学院填空题空格",
+  "name": "Fyxy",
+  "version": "2.0.0",
+  "description": "优学院答题助手",
   "manifest_version": 2,
   "permissions": [
     "contextMenus",
@@ -16,7 +16,7 @@
       ],
       "js": [
         "jquery.min.js",
-        "scripts.js"
+        "insert_scripts.js"
       ]
     }
   ],
@@ -24,7 +24,7 @@
     "scripts": ["background.js"]
   },
   "browser_action": {
-    "defult_icon": "icon.png",
-    "default_title": "fuckyouxueyuan"
+    "defult_icon": "bg.png",
+    "default_title": "Fyxy"
   }
 }
