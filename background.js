@@ -9,6 +9,8 @@ chrome.contextMenus.create(
     { "title": "添加15倍速", "parentId": parents, "onclick": genericOnClick, id: 'addSpeed15x', "contexts": ["all"] });
 chrome.contextMenus.create(
     { "title": "自动填充选择题", "parentId": parents, "onclick": genericOnClick, id: 'fillChoice', "contexts": ["all"] });
+chrome.contextMenus.create(
+    { "title": "自动填充判断题", "parentId": parents, "onclick": genericOnClick, id: 'fillJudge', "contexts": ["all"] });
 
 function genericOnClick(info, tab) {
     // 获取活动中的tab

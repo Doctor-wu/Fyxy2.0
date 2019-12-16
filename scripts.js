@@ -8,6 +8,7 @@ try {
             case "showAnswer":showAnswer();break;
             case "addSpeed15x":addSpeed15x();break;
             case "fillChoice":fillChoice();break;
+            case "fillJudge":fillJudge();break;
         }
         // console.log(response);
         response({farewell: "ok"});
@@ -147,4 +148,35 @@ function addSpeed15x() {
 	});
 }
 
-
+function fillJudge(){
+    var sqList = [];
+    var re = [];
+    $('.show-answer').each(function (k, v) {
+        var id = $(v).attr("id").replace(/[A-Za-z]+/,"")
+        console.log(id)
+        sqList.push(id)
+    });
+    
+    $(sqList).each(function (k, id) {
+        $.ajax({
+            async: false,
+            type: "get",
+            url: 'https://api.ulearning.cn/questionAnswer/' + id,
+            datatype: 'json',
+            success: function (result) {
+                re.push(result.correctAnswerList);
+            }
+        });
+    });
+    console.log(re);
+    var an = [];
+    $(re).each(function (k, v) {
+            an.push(v.toString())
+    });
+    $('.checking-type').each(function(k,v){
+        if(an.shift()=="true")
+            $($(v).find(".right-btn")).trigger("click");    
+        else
+            $($(v).find(".wrong-btn")).trigger("click");    
+    })
+}
