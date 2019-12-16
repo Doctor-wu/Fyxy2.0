@@ -70,6 +70,7 @@ function fillBlanks() {
         console.log(v);
         $(v).val(ansarr.shift());
     });
+    $('.question-operation-area').find('.btn-submit').click();
 }
 
 // function end() {
@@ -199,6 +200,7 @@ function fillChoice()
         }
         console.log($($('.choice-list')[k]).find('div.checkbox'));
     });
+    $('.question-operation-area').find('.btn-submit').click();
 
 
 
@@ -274,4 +276,5 @@ function fillJudge(){
         else
             $($(v).find(".wrong-btn")).trigger("click");    
     })
+    $('.question-operation-area').find('.btn-submit').click();
 }
