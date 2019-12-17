@@ -1,30 +1,28 @@
 {
-  "name": "Fyxy",
-  "version": "2.0.0",
-  "description": "优学院答题助手",
-  "manifest_version": 2,
-  "permissions": [
-    "contextMenus",
-    "tabs",
-    "https://www.ulearning.cn/",
-    "https://ua.ulearning.cn/"
-  ],
-  "content_scripts": [
-    {
-      "matches": [
-        "https://ua.ulearning.cn/learnCourse/*"
-      ],
-      "js": [
-        "jquery.min.js",
-        "insert_scripts.js"
-      ]
+    "name": "Fyxy",
+    "version": "2.0.0",
+    "description": "优学院答题助手",
+    "manifest_version": 2,
+    "permissions": [
+        "contextMenus",
+        "tabs",
+        "https://www.ulearning.cn/",
+        "https://ua.ulearning.cn/"
+    ],
+    "content_scripts": [{
+        "matches": [
+            "https://ua.ulearning.cn/learnCourse/*"
+        ],
+        "js": [
+            "jquery.min.js",
+            "fuxk.js"
+        ]
+    }],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "browser_action": {
+        "defult_icon": "bg.png",
+        "default_title": "Fyxy"
     }
-  ],
-  "background": {
-    "scripts": ["background.js"]
-  },
-  "browser_action": {
-    "defult_icon": "bg.png",
-    "default_title": "Fyxy"
-  }
 }

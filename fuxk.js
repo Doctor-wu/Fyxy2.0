@@ -15,6 +15,12 @@
         文章/ppt
 */
 timer = {};
+var timerinter = setInterval(function() {
+    if ($('#alertModal').attr('class').indexOf('fade') == -1) {
+        Array.from($('#alertModal .modal-body')[0].children).filter(item => item.children.length != 0)[0].children[1].children[0].click();
+        console.log('点掉了继续学习');
+    }
+}, 1000)
 
 function end() {
     $('.btn-tip')[1].click();
@@ -103,6 +109,45 @@ function end() {
 
 } //不用担心定时器的问题，他们都在事件队列中好着呢
 
+
+
+
+
+
+/*---------------------------Chrome config------------------------------------------*/
+try {
+    chrome.extension.onMessage.addListener(function(request, _, response) {
+        // console.log(request);
+        switch (request.contextMenuId) {
+            case "fuckit":
+                end();
+                break;
+            case "fillBlanks":
+                fillBlanks();
+                break;
+            case "showAnswer":
+                showAnswer();
+                break;
+            case "addSpeed15x":
+                addSpeed15x();
+                break;
+            case "fillChoice":
+                fillChoice();
+                break;
+            case "fillJudge":
+                fillJudge();
+                break;
+            case "autoVideo":
+                autoVideo();
+                break;
+        }
+        response({ farewell: "ok" });
+    });
+} catch (error) {
+    alert("插件加载失败\n原因：" + error);
+}
+
+/*---------------------------Chrome config------------------------------------------*/
 function removeDuplicatedItem(arr) { //去掉重复的id
     for (var i = 0; i < arr.length - 1; i++) {
         for (var j = i + 1; j < arr.length; j++) {
